@@ -1,0 +1,79 @@
+﻿@model Maintenances.Movie
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm("Create", "Movie", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+<div class="form-horizontal">
+    <h4>Pelicula</h4>
+    <hr />
+    <div>
+        @Html.ActionLink("Volver", "Index")
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">Titulo</label>
+        <div class="col-md-10">
+            <input type="text" name="Title" class="form-control" value="" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Fecha de Estreno</label>
+        <div class="col-md-10">
+            <input type="text" name="Release_date" class="form-control date" value="" readonly />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Genero</label>
+        <div class="col-md-10">
+            @Html.DropDownListFor(x => x.Genero, new SelectList(ViewBag.generos, "generoId", "Name"), null, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">Foto</label>
+        <div class="col-md-10">
+            <input type="file" name="file" id="file1" class="form-control" />
+        </div>
+    </div>
+    <hr />
+    <table id="actor-table" class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Actor</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="last_row">
+                <td colspan="3">
+                    <button type="button" class="btn btn-info trigger_add_row border-button"><i class="fa fa-plus"></i> <span>Agregar</span></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<hr />
+<div class="form-group">
+    <div class="col-md-10">
+        <input type="submit" value="Create" class="submit btn btn-primary" />
+    </div>
+</div>
+}
+
+<table class="hidden">
+    <tbody id="row-table-hidden">
+        <tr class="row-item inline">
+            <input type="hidden" class="itemId" value="0">
+            <td class="number-count"></td>
+            <td> @Html.DropDownList("ActorId", new SelectList(ViewBag.actors, "ActorId", "Name"), null, new { @class = "ActorId form-control" })</td>
+            <td><button type="button" class="close trigger_remove_row mg-8" data-id="0"><i class="btn btn-danger">X</i></button></td>
+        </tr>
+    </tbody>
+</table>

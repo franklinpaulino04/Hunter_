@@ -1,0 +1,17 @@
+C:\Users\Eury\source\repos\Hunter_v1\Maintenances\bin\Debug\Maintenances.dll
+C:\Users\Eury\source\repos\Hunter_v1\Maintenances\bin\Debug\Maintenances.pdb
+C:\Users\Eury\source\repos\Hunter_v1\Maintenances\obj\Debug\Maintenances.csproj.CoreCompileInputs.cache
+C:\Users\Eury\source\repos\Hunter_v1\Maintenances\obj\Debug\Maintenances.dll
+C:\Users\Eury\source\repos\Hunter_v1\Maintenances\obj\Debug\Maintenances.pdb
+C:\Users\Eury\source\repos\Hunter_v1\Maintenances\obj\Debug\Maintenances.csprojAssemblyReference.cache
+C:\Users\Frankin-PC\source\repos\Hunter_v1\Hunter_v1\Maintenances\bin\Debug\Maintenances.dll
+C:\Users\Frankin-PC\source\repos\Hunter_v1\Hunter_v1\Maintenances\bin\Debug\Maintenances.pdb
+C:\Users\Frankin-PC\source\repos\Hunter_v1\Hunter_v1\Maintenances\obj\Debug\Maintenances.csprojAssemblyReference.cache
+C:\Users\Frankin-PC\source\repos\Hunter_v1\Hunter_v1\Maintenances\obj\Debug\Maintenances.dll
+C:\Users\Frankin-PC\source\repos\Hunter_v1\Hunter_v1\Maintenances\obj\Debug\Maintenances.pdb
+C:\Users\Eury\source\repos\Hunter_v1\Hunter_v1\Maintenances\bin\Debug\Maintenances.dll
+C:\Users\Eury\source\repos\Hunter_v1\Hunter_v1\Maintenances\bin\Debug\Maintenances.pdb
+C:\Users\Eury\source\repos\Hunter_v1\Hunter_v1\Maintenances\obj\Debug\Maintenances.csprojAssemblyReference.cache
+C:\Users\Eury\source\repos\Hunter_v1\Hunter_v1\Maintenances\obj\Debug\Maintenances.csproj.CoreCompileInputs.cache
+C:\Users\Eury\source\repos\Hunter_v1\Hunter_v1\Maintenances\obj\Debug\Maintenances.dll
+C:\Users\Eury\source\repos\Hunter_v1\Hunter_v1\Maintenances\obj\Debug\Maintenances.pdb

@@ -1,0 +1,107 @@
+﻿@model Maintenances.Movie
+
+@{
+    ViewBag.Title = "Edit";
+    var items = ViewBag.items as IEnumerable<Maintenances.Movie_Items>;
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("Update", "Movie", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+<div class="form-horizontal">
+    <h4>Pelicula</h4>
+    <hr />
+    <div>
+        @Html.ActionLink("volver", "Index")
+    </div>
+    <div class="form-group">
+        <input type="hidden" name="ActorId" value="@Model.MovieId" />
+        <label class="control-label col-md-2">Nombre</label>
+        <div class="col-md-10">
+            <input type="text" name="Name" class="form-control" value="@Model.Title" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Fecha de Estreno</label>
+        <div class="col-md-10">
+            <input type="text" name="Birth_date" class="form-control date" value="@Model.Release_date" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Genero</label>
+        <div class="col-md-10">
+            @Html.DropDownListFor(x => x.Genero, new SelectList(ViewBag.generos, "generoId", "Name"), null, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">Foto</label>
+        <div class="col-md-10">
+            <input type="file" name="file" class="form-control" />
+        </div>
+    </div>
+    <hr />
+    <table id="actor-table" class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Actor</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (items.Any())
+            {
+                var count = 0;
+                foreach (var row in items)
+                {
+                    <tr class="row-item inline">
+                        <input type="hidden" class="itemId" value="@row.itemId">
+                        <td class="number-count"></td>
+                        <td> @Html.DropDownList("Items.[" + count + "].ActorId", new SelectList(ViewBag.actors, "ActorId", "Name", row.ActorId), null, new { @class = "ActorId form-control" })</td>
+                        <td><button type="button" class="close trigger_remove_row mg-8" data-id="@row.itemId"><i class="btn btn-danger">X</i></button></td>
+                    </tr>
+
+                    count++;
+                }
+            }
+            else
+            {
+                <tr class="row-item inline">
+                    <input type="hidden" class="itemId" value="0">
+                    <td class="number-count"></td>
+                    <td> @Html.DropDownList("Items.[0].ActorId", new SelectList(ViewBag.actors, "ActorId", "Name"), null, new { @class = "ActorId form-control" })</td>
+                    <td><button type="button" class="close trigger_remove_row mg-8" data-id="0"><i class="btn btn-danger">X</i></button></td>
+                </tr>
+            }
+            <tr class="last_row">
+                <td colspan="3">
+                    <button type="button" class="btn btn-info trigger_add_row border-button"><i class="fa fa-plus"></i> <span>Agregar</span></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr />
+    <div class="form-group">
+        <div class="col-md-10">
+            <input type="submit" value="Update" class="btn btn-primary" />
+        </div>
+    </div>
+</div>
+}
+
+
+
+<table class="hidden">
+    <tbody id="row-table-hidden">
+        <tr class="row-item inline">
+            <input type="hidden" class="itemId" value="0">
+            <td class="number-count"></td>
+            <td> @Html.DropDownList("ActorId", new SelectList(ViewBag.actors, "ActorId", "Name"), null, new { @class = "ActorId form-control" })</td>
+            <td><button type="button" class="close trigger_remove_row mg-8" data-id="0"><i class="btn btn-danger">X</i></button></td>
+        </tr>
+    </tbody>
+</table>
